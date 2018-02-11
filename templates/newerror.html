@@ -1,0 +1,17 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}My app{% endblock %}
+{% block navbar %}
+	<nav class="navbar navbar-inverse role="navigation">
+	      <div class="container">
+           	<a class="navbar-brand" href="{{url_for('index')}}">Twitter handle</a>
+          </div>
+	</nav>
+	
+{% endblock %}
+
+{% block content %}
+	 <div class="container">
+	 	<h1>Looks like this is an error</h1>
+		<p>Click here to :<a class="nav-brand" href="{{ url_for('index') }}">Gotohome</a></p>
+{% endblock %}	
