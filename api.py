@@ -47,3 +47,7 @@ def namere():
 def nameree(e):
     return render_template('newerror.html')
     
+    
+        
+if __name__=='__main__':
+    app.run(debug=True)
