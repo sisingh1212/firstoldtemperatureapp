@@ -1,0 +1,42 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}My app{% endblock %}
+{% block navbar %}
+	<nav class="navbar navbar-inverse role="navigation">
+	      <div class="container">
+           	<a class="navbar-brand" href="{{url_for('index')}}">Hello</a>
+          </div>
+	</nav>
+
+
+
+
+<h1>{{tablename}}</h1>
+<hr>
+<table>
+	<tr>
+		<th>Months</th>
+		<th>Min</th>
+		<th>Max</th>
+		<th>Rainfall</th>
+	</tr>
+	{% for month in months %}
+	<tr>
+		<td>{{ month }}</td>
+		<td>
+		{% set hl = weather[month]['min'] <= minn %}
+		{% if hl  %}<b>{% endif%}
+		{{ weather[month]['min'] }}
+		{% if hl  %}</b>{% endif%}
+		</td>
+		<td>
+		{% set hl = weather[month]['max'] >= maxx %}
+		{% if hl  %}<b>{% endif%}
+		{{ weather[month]['max'] }}
+		{% if hl  %}</b>{% endif%}
+		</td>
+		<td>{{ weather[month]['rain'] }}</td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock %}
